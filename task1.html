@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+</head>
+
+<body>
+
+    <script language="JavaScript">
+        var level = 1;
+        var givenArray = [23, 6, [2,[6,2,1,2], 2], 5, 2];
+
+        function printSpaces(){
+            for (var i=0; i<=(4*level); i++)
+                document.write("&nbsp;");
+        }
+
+        function printAnyArray(currentArray){
+
+            for (var i=0; i<currentArray.length; i++){
+
+                if (Array.isArray(currentArray[i])){
+
+                    level++;
+                    if (printAnyArray(currentArray[i]))
+                            level--;
+
+                }
+                else {
+
+                    printSpaces(level);
+                    document.write(currentArray[i] + "<br>");
+
+                }
+            }
+
+            return 1;
+
+        }
+
+        document.write("<pre>");
+
+            printAnyArray(givenArray,1);
+
+        document.write("</pre>");
+
+    </script>
+</body>
+
+</html>

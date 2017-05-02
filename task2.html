@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Highest_Lowest_Average_Temperature</title>
+</head>
+<body>
+
+<script language="JavaScript">
+
+    var a = [78,60,62,68,71,68,73,85,66,64,76,63,75,76,73,68,62,73,72,65,74,62,62,65,64,68,73,75,79,73];
+    var n = a.length;
+    var sorting = a.sort();
+    var minimum = a.slice(0,5);
+    var maximum = a.slice(-5);
+
+    var total = 0;
+    for(var i = 0; i < n; i++) {
+        total += a[i];
+    }
+
+    var avg = total / n;
+
+    document.write("<br>"+"Average tepmerature : "+avg);
+    document.write("<br><br>"+"List of five Lowest tepmerature : "+minimum);
+    document.write("<br><br>"+"List of five highest tepmerature : "+maximum);
+
+</script>
+
+</body>
+</html>
+
